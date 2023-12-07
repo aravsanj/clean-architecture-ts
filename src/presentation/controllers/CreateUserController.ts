@@ -5,9 +5,8 @@ import {
 } from "../../application/use-cases/CreateUser";
 
 
-// That's because we're in the presentation layer. 
 
-// We take CreateUser use-case (from app layer) as a dependency.
+// Here We take CreateUser use-case (from app layer) as a dependency.
 
 // The handle method here is the one that get called when req is received at the endpoint.
 
