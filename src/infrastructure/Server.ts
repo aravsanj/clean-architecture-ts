@@ -1,5 +1,5 @@
 import express from "express";
-import { CreateUserController } from "./controllers/CreateUserController";
+import { CreateUserController } from "../presentation/controllers/CreateUserController";
 
 // This is the actual server class.
 
@@ -10,7 +10,6 @@ export class Server {
     port: number,
     createUserController: CreateUserController
   ): Promise<void> {
-    
     const app = express();
     app.use(express.json());
 
