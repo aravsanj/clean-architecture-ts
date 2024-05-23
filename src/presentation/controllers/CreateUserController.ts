@@ -3,8 +3,7 @@ import {
   CreateUser,
   ICreateUserResult,
 } from "../../application/use-cases/CreateUser";
-
-
+import { IController } from "../../shared/IController";
 
 // Here We take CreateUser use-case (from app layer) as a dependency.
 
@@ -14,8 +13,7 @@ import {
 
 // We have also brought about concept of DTOs. I am using the result interface from the use case to implement the DTO class.
 
-// Then I am type-checking the response by creating its instance using data from the result. 
-
+// Then I am type-checking the response by creating its instance using data from the result.
 
 export class CreatedUserDTO implements ICreateUserResult {
   public readonly userId: string;
@@ -25,7 +23,7 @@ export class CreatedUserDTO implements ICreateUserResult {
   }
 }
 
-export class CreateUserController {
+export class CreateUserController implements IController {
   public constructor(private readonly _useCase: CreateUser) {}
 
   public async handle(req: Request, res: Response): Promise<void> {
