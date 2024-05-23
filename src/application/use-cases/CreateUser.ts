@@ -1,6 +1,6 @@
 import { User } from "../../domain/entities/User";
 import { IUseCase } from "../../shared/IUseCase";
-import { IUserRepository } from "../interfaces/IUserRepository";
+import { IUserRepository } from "../../domain/interfaces/IUserRepository";
 
 // This is the application level logic. CreateUser class as the name suggests creates a new user.
 

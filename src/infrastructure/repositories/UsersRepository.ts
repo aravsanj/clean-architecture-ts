@@ -1,4 +1,4 @@
-import { IUserRepository } from "../../application/interfaces/IUserRepository";
+import { IUserRepository } from "../../domain/interfaces/IUserRepository";
 import { User } from "../../domain/entities/User";
 
 // This is our user repository
@@ -10,7 +10,7 @@ import { User } from "../../domain/entities/User";
 
 // Notice that I am importing the User entity class from the domain layer.
 
-// Since we pass down instance of userRepo to createUser (app layer) and createUser to createUserController (pres layer). 
+// Since we pass down instance of userRepo to createUser (app layer) and createUser to createUserController (pres layer).
 // That way type checking will be enforced through out (check main.ts)
 
 export class UserRepository implements IUserRepository {
