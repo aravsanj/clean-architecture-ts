@@ -33,12 +33,9 @@ export class CreateUser implements IUseCase<ICreateUserDTO, ICreateUserResult> {
   public constructor(private readonly _userRepo: IUserRepository) {}
 
   public async execute(input: ICreateUserDTO): Promise<ICreateUserResult> {
-    const user = new User(
-      input.name,
-      input.username,
-      input.email,
-      input.password
-    );
+    const { name, username, email, password } = input;
+
+    const user = new User({ name, username, email, password });
 
     const result = await this._userRepo.save(user);
 
